@@ -1,0 +1,13 @@
+{
+    "name": "koine-validator",
+    "description": "A validation abstraction",
+    "version": "0.9.0",
+    "license": "MIT",
+    "author": "Marcelo Jacobus <marcelo.jacobus@gmail.com>"
+    "devDependencies": {
+        "jasmine": "*"
+    },
+    "scripts": {
+        "test": "jasmine-node specs"
+    }
+}
