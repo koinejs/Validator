@@ -9,7 +9,6 @@ Code information:
 [![Build Status](https://travis-ci.org/koinejs/Validator.png?branch=master)](https://travis-ci.org/koinejs/Validator)
 [![Coverage Status](https://coveralls.io/repos/koinejs/Validator/badge.png?branch=master)](https://coveralls.io/r/koinejs/Validator?branch=master)
 [![Code Climate](https://codeclimate.com/github/koinejs/Validator.png)](https://codeclimate.com/github/koinejs/Validator)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/koinejs/Validator/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/koinejs/Validator/?branch=master)
 
 Package information:
 
