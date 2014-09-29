@@ -7,7 +7,7 @@ UserValidator.prototype = Koine.Validator.prototype;
 
 UserValidator.prototype.processValidation = function (user) {
     if (!user.name) {
-        this.getErrors().push('Invalid');
+        this.getErrors().add('name', 'required');
     }
 };
 
@@ -26,11 +26,13 @@ describe("Koine.Validator", function () {
     });
 
     it("returns false when object is not valid but true when it is", function () {
-        user = {};
-        expect(validator.isValid(user)).toBeFalsy();
+        // false
+        valid = validator.isValid({});
+        expect(valid).toBeFalsy();
 
-        user.name = "John Doe";
-        expect(validator.isValid(user)).toBeTruthy();
+        // valid
+        valid = validator.isValid({name: 'userName'});
+        expect(valid).toBeTruthy();
     });
 });
 
