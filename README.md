@@ -21,8 +21,9 @@ In order to create a validator, extend the ```executeValidation``` method:
 
 ```javascript
 
-var UserValidator = Koine.Validator.extend({
-    executeValidation: function (value) {
+var UserValidation = function () {};
+UserValidator.prototype = Koine.Validator.prototype;
+UserValidator.prototype = Koine.Validator.prototype.executeValidation = function (value) {
         if (!value['name']) {
             this.getErrors().add('name', 'you must set name');
         }
@@ -30,8 +31,7 @@ var UserValidator = Koine.Validator.extend({
         if (!value['lastName']) {
             this.getErrors().add('lastName', 'you must set last name');
         }
-    }
-});
+    };
 
 var user = { name: 'Jon', lastName: '' };
 
