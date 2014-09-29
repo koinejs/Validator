@@ -24,7 +24,7 @@
 
         this.processValidation(value);
 
-        return this.getErrors().length === 0;
+        return this.getErrors().isEmpty();
     };
 
     /**

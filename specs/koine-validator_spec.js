@@ -1,5 +1,6 @@
-
-var Koine = require('../src/koine-validator.js');
+if (typeof(require) === 'function') {
+    var Koine = require('../src/koine-validator.js');
+}
 
 var UserValidator = function () {};
 
