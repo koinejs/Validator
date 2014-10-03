@@ -35,7 +35,7 @@
         this._errors = this._errors || new Koine.Validator.Errors();
 
         return this._errors;
-    }
+    };
 
     /**
      * Errors Class
@@ -62,7 +62,7 @@
      * @return self
      */
     Koine.Validator.Errors.prototype.add = function (key, message) {
-        this._errors      = this._errors || {}
+        this._errors      = this._errors || {};
         this._errors[key] = this._errors[key] || [];
         this._errors[key].push(message);
 

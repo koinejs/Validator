@@ -26,14 +26,16 @@ describe("Koine.Validator", function () {
         expect(validator).not.toBeUndefined(null);
     });
 
-    it("returns false when object is not valid but true when it is", function () {
-        // false
-        valid = validator.isValid({});
-        expect(valid).toBeFalsy();
+    describe("#isValid()", function () {
+        it("returns false when object is not valid but true when it is", function () {
+            // false
+            valid = validator.isValid({});
+            expect(valid).toBeFalsy();
 
-        // valid
-        valid = validator.isValid({name: 'userName'});
-        expect(valid).toBeTruthy();
+            // valid
+            valid = validator.isValid({name: 'userName'});
+            expect(valid).toBeTruthy();
+        });
     });
 });
 
@@ -48,26 +50,32 @@ describe("Koine.Validator.Errors", function () {
         expect(errors.isEmpty()).toBeTruthy();
     });
 
-    it("isEmpty() returns either true or false", function () {
-        expect(errors.isEmpty()).toBeTruthy();
-        errors.add("field", "error");
-        expect(errors.isEmpty()).toBeFalsy();
-    });
-
-    it("can add errors to the object", function () {
-        errors.add("field", "message")
-            .add("field", "message 2")
-            .add("field2", "message");
-
-        expect(errors.toJson()).toEqual({
-            field: ["message", "message 2"],
-            field2: ["message"]
+    describe("#isEmpty()", function () {
+        it("returns either true or false", function () {
+            expect(errors.isEmpty()).toBeTruthy();
+            errors.add("field", "error");
+            expect(errors.isEmpty()).toBeFalsy();
         });
     });
 
-    it("can empty error collection", function () {
-        errors.add("some", "some message");
+    describe("#add()", function () {
+        it("can add errors to the object", function () {
+            errors.add("field", "message")
+                .add("field", "message 2")
+                .add("field2", "message");
 
-        expect(errors.clear().isEmpty()).toBeTruthy();
+            expect(errors.toJson()).toEqual({
+                field: ["message", "message 2"],
+                field2: ["message"]
+            });
+        });
+    });
+
+    describe("#clear()", function () {
+        it("can empty error collection", function () {
+            errors.add("some", "some message");
+
+            expect(errors.clear().isEmpty()).toBeTruthy();
+        });
     });
 });
