@@ -1,3 +1,5 @@
+var exports = exports || undefined;
+
 (function (Koine) {
   "use strinct";
 
@@ -10,7 +12,7 @@
   /**
    * Process validation
    */
-  Koine.Validator.prototype.processValidation = function (value) {
+  Koine.Validator.prototype.processValidation = function () {
     throw new Error("Not inplemented");
   };
 
@@ -49,7 +51,8 @@
    */
   Koine.Validator.Errors.prototype.isEmpty = function () {
     for (var prop in this._errors) {
-      return false;
+      // always false, passes jshint
+      return typeof(prop) === null;
     }
 
     return true;
